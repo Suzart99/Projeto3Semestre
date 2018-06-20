@@ -22,7 +22,7 @@ public class EncarregadoDAO {
 	
 	public void inserir(Encarregado enc1) {
 		try {			
-			PreparedStatement stmt = conexao.getConnection().prepareStatement("insert into encarregado(nome,cargo,login,senha)VALUES(?,?,?,?)");
+			PreparedStatement stmt = conexao.getConnection().prepareStatement("insert into encarregado(nomeenc,cargo,login,senha)VALUES(?,?,?,?)");
 			stmt.setString(1, enc1.getNomeEncarregado());
 			stmt.setString(2, enc1.getCargo());
 			stmt.setString(3, enc1.getLogin());
@@ -40,11 +40,11 @@ public class EncarregadoDAO {
 		List<Encarregado> encarregados = new ArrayList<>();
 		try {
 			stmt = conexao.getConnection().createStatement();
-			ResultSet rs = stmt.executeQuery("select encarregadoId, nome,cargo,login,senha from encarregado");
+			ResultSet rs = stmt.executeQuery("select encarregadoId, nomeenc ,cargo,login,senha from encarregado");
 			while(rs.next()) {
 				Encarregado e = new Encarregado();
 				e.setEncarregadoId(rs.getInt("encarregadoId"));
-				e.setNomeEncarregado(rs.getString("nome"));
+				e.setNomeEncarregado(rs.getString("nomeenc"));
 				e.setCargo(rs.getString("cargo"));
 				e.setLogin(rs.getString("login"));
 				e.setSenha(rs.getString("senha"));
@@ -61,13 +61,13 @@ public class EncarregadoDAO {
 	public Encarregado getByID(int id) {
 		Encarregado enc= null;
 		try {
-			PreparedStatement ps = conexao.getConnection().prepareStatement("select nome,cargo,login,senha from encarregado where encarregadoId=?");
+			PreparedStatement ps = conexao.getConnection().prepareStatement("select nomeenc,cargo,login,senha from encarregado where encarregadoId=?");
 			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
 			if(rs.next()) {
 				enc= new Encarregado ();
 				enc.setEncarregadoId(id);
-				enc.setNomeEncarregado(rs.getString("nome"));
+				enc.setNomeEncarregado(rs.getString("nomeenc"));
 				enc.setCargo(rs.getString("cargo"));		
 				enc.setLogin(rs.getString("login"));
 				enc.setSenha(rs.getString("senha"));
@@ -98,7 +98,7 @@ public class EncarregadoDAO {
 		try {
 			
 			PreparedStatement pstmt = conexao.getConnection()
-					.prepareStatement("update encarregado set nome=?,cargo=?, login=?, senha=? where encarregadoId =?");
+					.prepareStatement("update encarregado set nomeEnc=?,cargo=?, login=?, senha=? where encarregadoId =?");
 			pstmt.setString(1, enc.getNomeEncarregado());
 			pstmt.setString(2, enc.getCargo());
 			pstmt.setString(3, enc.getLogin());

@@ -1,6 +1,5 @@
 package br.edu.ucsal.meucsal.dao;
 
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,7 +26,7 @@ public class EventoDAO {
 					.prepareStatement("insert into evento(nome,data,tema,encarregadoId)VALUES(?,?,?,?)");
 			stmt.setString(1, evt1.getNomeEvento());
 			stmt.setTimestamp(2,Timestamp.valueOf(evt1.getData().atStartOfDay()));
-			stmt.setString(3, evt1.getNomeEvento());
+			stmt.setString(3, evt1.getTema());
 			stmt.setInt(4, evt1.getEnc().getEncarregadoId());
 			stmt.execute();
 			stmt.close();
@@ -43,16 +42,18 @@ public class EventoDAO {
 		try {
 			stmt = conexao.getConnection().createStatement();
 			ResultSet rs = stmt.executeQuery(
-					"select eventoId, evento.nome,data,tema, encarregado.encarregadoId, encarregado.nome,encarregado.cargo,encarregado.login,encarregado.senha from evento,encarregado where evento.encarregadoId = encarregado.encarregadoId");
+					"select eventoId, evento.nome,data,tema, encarregado.encarregadoId, encarregado.nomeenc,encarregado.cargo,encarregado.login,encarregado.senha from evento,encarregado where evento.encarregadoId = encarregado.encarregadoId");
 			while (rs.next()) {
 				
 				Evento evt = new Evento();
+				evt.setEventoId(rs.getInt("eventoId"));
 				evt.setNomeEvento(rs.getString("nome"));
 				evt.setData(rs.getDate("data").toLocalDate());
 				evt.setTema(rs.getString("tema"));
 
 				Encarregado enc = new Encarregado();
-				enc.setNomeEncarregado(rs.getString("nome"));
+				enc.setEncarregadoId(rs.getInt("encarregadoId"));
+				enc.setNomeEncarregado(rs.getString("nomeenc"));
 				enc.setCargo(rs.getString("cargo"));
 				enc.setLogin(rs.getString("login"));
 				enc.setSenha(rs.getString("senha"));
@@ -83,7 +84,7 @@ public class EventoDAO {
 				evt.setTema(rs.getString("tema"));
 
 				Encarregado enc = new Encarregado ();
-				enc.setEncarregadoId(rs.getInt("encarregadoId "));
+				enc.setEncarregadoId(rs.getInt("encarregadoId"));
 				
 			}
 			

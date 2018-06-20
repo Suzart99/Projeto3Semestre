@@ -36,6 +36,7 @@
 <th>Nome</th>
 <th>Data</th>
 <th>Tema</th>  
+<th>Encarregado</th>  
 <th>Opções</th>
 </tr>
 
@@ -45,9 +46,10 @@
  <td>${evt.nomeEvento}</td>
  <td>${evt.data}</td>
  <td>${evt.tema}</td>
+ <td>${evt.enc.nomeEncarregado}</td>
 
- <td> <a href="local?q=excluir&id=${evt.eventoId}"><i class="material-icons prefix">delete</i>Delete</a>
-  	  <a href="local?q=editar&id=${evt.eventoId}"><i class="material-icons prefix">edit</i>Edit</a> 
+ <td> <a href="evento?q=excluir&id=${evt.eventoId}"><i class="material-icons prefix">delete</i>Delete</a>
+  	  <a href="evento?q=editar&id=${evt.eventoId}"><i class="material-icons prefix">edit</i>Edit</a> 
  </td>
  
 <tr>

@@ -56,6 +56,8 @@ public class EventoController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String id = request.getParameter("id");
+		System.out.println(id);
+		
 		Evento evt = new Evento();
 		Integer encarregadoId = Integer.parseInt(request.getParameter("enc"));
 		 
@@ -65,7 +67,6 @@ public class EventoController extends HttpServlet {
 		
 		EncarregadoDAO encDAO = new EncarregadoDAO();
 		Encarregado enc = encDAO.getByID(encarregadoId);
-		
 		
 		evt.setNomeEvento(nome);
 		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");

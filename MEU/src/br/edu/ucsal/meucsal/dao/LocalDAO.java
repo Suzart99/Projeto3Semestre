@@ -46,6 +46,7 @@ public class LocalDAO {
 				Local l1 = new Local();
 				l1.setLocalId(rs.getInt("localId"));
 				l1.setCampus(rs.getString("campus"));
+				l1.setAndar(rs.getString("andar"));
 				l1.setBloco(rs.getString("bloco"));			
 				locais.add(l1);
 			}
@@ -68,6 +69,7 @@ public class LocalDAO {
 			    local.setLocalId(id);
 				local.setLocalId(rs.getInt("localId"));
 				local.setCampus(rs.getString("campus"));
+				local.setAndar(rs.getString("andar"));
 				local.setBloco(rs.getString("bloco"));		
 			}
 			

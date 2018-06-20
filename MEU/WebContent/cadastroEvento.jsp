@@ -25,9 +25,11 @@
 					src="images/novaucsalogo.png" height="100" width="200"
 					title="UCSAL">
 				<h6>Cadastro de Evento</h6>
+
 				<div class="row">
 					<div class="input-field col s12">
-						<i class="material-icons prefix">event</i> <input id="nome"
+									<input name="id" id="id" type="hidden" value="${evento.eventoId}" >
+						<i class="material-icons prefix">event</i> <input id="nome" name="nome"
 							type="text" class="validate inputwhite"> <label
 							for="nome">Nome do Evento</label>
 					</div>
@@ -35,7 +37,7 @@
 				<div class="row">
 					<div class="input-field col s5">
 						<i class="material-icons prefix">event</i> <input id="tema"
-							type="text" class="validate inputwhite"> <label
+							name ="tema" type="text" class="validate inputwhite"> <label
 							for="tema">Tema</label>
 					</div>
 					<div class="input-field col s7">
@@ -47,7 +49,7 @@
 				<div class="row">
 					<div class="input-field col s12">
 						<select name="enc" class="browser-default">
-							<option value="" selected>Selecione</option>
+							<option value="" selected disabled>Selecione o ENCARREGADO </option>
 							<c:forEach var="encarregado" items="${lista}">
 								<option value="${encarregado.encarregadoId}">${encarregado.nomeEncarregado}</option>
 							</c:forEach>

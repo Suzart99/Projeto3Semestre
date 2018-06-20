@@ -61,13 +61,14 @@ String q = request.getParameter("q");
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String id = request.getParameter("id");
-		System.out.println(id);
+		
 		
 		 String campus = request.getParameter("campus");
 		 String andar = request.getParameter("andar");
 		 String bloco = request.getParameter("bloco")  ;
-		Local local = new Local(campus, andar, bloco);
-		LocalDAO lDAO = new LocalDAO ();
+		
+		 Local local = new Local(campus, andar, bloco);
+		 LocalDAO lDAO = new LocalDAO ();
 		
 		
 		
