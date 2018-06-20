@@ -1,0 +1,16 @@
+BROTHER MARX É O SEGUINTE
+
+1 - NOS FORMS EU INDIQUEI QUANDO FOR REDIRECIONAR PARA O SERVLET PARA LOGIN, SALVAR NO BANCO ETC
+
+2 - O SCRIPT DA sideNAV ("index.jsp") não está funcionando
+
+3 - Consegui colocar os scripts pra rodarem do "cadastroEvento" abrindo uma tag <script> e inicializando por lá mesmo.
+
+4 - No "cadastroEvento", o datePicker tá com as datas em branco quando clica para colocar, favor dar uma olhadinha.
+
+5 - Tem dois "sobre,jsp" porque 1 é para admin, o outro coordenador, por causa do botão voltar que só dá pra redirecionar para 1 lugar, por isso 2 versões do mesmo código cada redirecionando para seu devido "home"
+
+6 - Os códigos java do MEUcsal estão nesse arquivo, falta criar a classe Localização, não criei pq não discutimos as variáveis/atributos.
+
+7 - Qualquer dúvida em relação ao código só falar.
+

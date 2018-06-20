@@ -1,0 +1,83 @@
+ body {
+    background-image:url(./background.jpg);
+    background-attachment: fixed;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  .loginArea {
+    background-color: black;
+    width: 500px;
+    height: 470px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    color: #ffff;
+    text-align: center;
+
+  }
+.sobreArea {
+  background-color: #f57c00;
+  width: 500px;
+  height: 420px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  color: #ffff;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.cadastroEspaco {
+  background-color: black;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.cadastroEvento {
+  background-color:  #d32f2f;
+  width: 900px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  color: #ffff;
+  text-align: center;
+  font-family: sans-serif;
+
+
+}
+
+.cadastroPessoa {
+  background-color:#0d47a1;
+  width: 400px;
+  height: 590px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  color: #ffff;
+  text-align: center;
+  font-family: sans-serif;
+
+}
+
+
+.inputWhite{
+    color: white;
+
+}
