@@ -68,7 +68,7 @@ public class EventoController extends HttpServlet {
 		
 		
 		evt.setNomeEvento(nome);
-		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		evt.setData(LocalDate.parse(data, dateFormat));
 		evt.setTema(tema);
 		evt.setEnc(enc);

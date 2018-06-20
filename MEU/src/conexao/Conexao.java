@@ -13,9 +13,9 @@ public class Conexao {
 	
 	
  	private static String driver = "org.postgresql.Driver";
-    private static String url = "jdbc:postgresql://localhost:5432/dbfinal";
+    private static String url = "jdbc:postgresql://localhost:6543/dbtrab";
     private static String user = "postgres";
-    private static String pass = "root";
+    private static String pass = "postgresql";
 	
 	static {
 		try {

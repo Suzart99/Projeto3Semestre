@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class EventoDAO {
 			PreparedStatement stmt = conexao.getConnection()
 					.prepareStatement("insert into evento(nome,data,tema,encarregadoId)VALUES(?,?,?,?)");
 			stmt.setString(1, evt1.getNomeEvento());
-			stmt.setDate(2, Date.valueOf(evt1.getData()));
+			stmt.setTimestamp(2,Timestamp.valueOf(evt1.getData().atStartOfDay()));
 			stmt.setString(3, evt1.getNomeEvento());
 			stmt.setInt(4, evt1.getEnc().getEncarregadoId());
 			stmt.execute();
@@ -47,7 +48,7 @@ public class EventoDAO {
 				
 				Evento evt = new Evento();
 				evt.setNomeEvento(rs.getString("nome"));
-				evt.setData(rs.getDate("dataEvt").toLocalDate());
+				evt.setData(rs.getDate("data").toLocalDate());
 				evt.setTema(rs.getString("tema"));
 
 				Encarregado enc = new Encarregado();

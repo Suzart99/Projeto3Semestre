@@ -46,12 +46,10 @@
  <td>${evt.data}</td>
  <td>${evt.tema}</td>
 
- <td> <a href="local?q=excluir&id=${evt.localId}"><i class="material-icons prefix">delete</i>Delete</a>
-  	  <a href="local?q=editar&id=${evt.localId}"><i class="material-icons prefix">edit</i>Edit</a> 
+ <td> <a href="local?q=excluir&id=${evt.eventoId}"><i class="material-icons prefix">delete</i>Delete</a>
+  	  <a href="local?q=editar&id=${evt.eventoId}"><i class="material-icons prefix">edit</i>Edit</a> 
  </td>
  
-
-
 <tr>
 </c:forEach>
 </table>

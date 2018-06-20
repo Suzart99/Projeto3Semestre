@@ -41,7 +41,7 @@ public class ApresentacaoController extends HttpServlet {
 			
 			String sinopse = request.getParameter("sinopse");
 			String hora = request.getParameter("hora");
-			String 
+			//String 
 		
 			
 	}
